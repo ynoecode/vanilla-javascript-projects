@@ -2,25 +2,34 @@
 const bgTitleEl = document.querySelector('.bg-title');
 const bgColorEl = document.querySelector('.bg-color');
 const buttonEl = document.querySelector('#btn');
+const colorsEL = document.querySelectorAll('.color');
 
 // Add an event listener to the button that calls updateBackgroundColor when clicked
 buttonEl.addEventListener('click', updateBackgroundColor);
 
 // Updates the background color and text when the button is clicked
 function updateBackgroundColor() {
-  // Generate a random hex color code
-  const hexColor = getRandomHexColor();
-  // Determine whether the background color is dark or light
-  const isDark = isDarkColor(hexColor);
+  let hexColor;
+  colorsEL.forEach(color => {
+    // Generate a random hex color code
+    hexColor = getRandomHexColor();
+    // Set the background color of the current element to the generated hex color
+    color.style.backgroundColor = hexColor;
 
-  // Set the background color of the page
-  document.body.style.backgroundColor = hexColor;
-  // Set the text color of the page based on the background color
-  document.body.style.color = isDark ? 'white' : 'black';
-  // Update the background color title and text
-  bgTitleEl.textContent = `Background Color: ${hexColor}`;
-  bgColorEl.textContent = hexColor;
+    // Determine whether the background color is dark or light
+    const isDark = isDarkColor(hexColor);
+
+    // Set the text color of the current element to white if the background color is dark, otherwise black
+    color.style.color = isDark ? 'white' : 'black';
+
+    // Get the element with class "hex" inside the current element
+    const hexEl = color.querySelector('.hex');
+    // Set the text content of the "hex" element to the generated hex color
+    hexEl.textContent = hexColor;
+  });
 }
+
+
 
 // Generates a random hex color code
 function getRandomHexColor() {
