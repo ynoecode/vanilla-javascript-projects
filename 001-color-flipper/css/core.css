@@ -48,3 +48,15 @@ body {
   align-items: center;
   width: 100%;
 }
+
+.palette {
+  padding-top: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 50vh;
+}
+
+.color {
+  flex-grow: 1;
+  height: 100%;
+}
