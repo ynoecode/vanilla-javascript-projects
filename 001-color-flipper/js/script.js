@@ -9,7 +9,6 @@ const colorsEL = document.querySelectorAll('.color');
 const toastEl = document.querySelector('.toast');
 const toastContainerEl = document.querySelector('.toast-container');
 
-
 // Add an event listener to the button that calls updateBackgroundColor when clicked
 buttonEl.addEventListener('click', updateBackgroundColor);
 
@@ -86,7 +85,6 @@ function copyHexCode(event) {
   navigator.clipboard.writeText(hexCode);
 }
 
-
 // Add an event listener to each color element that shows the color hex code in a toast message when clicked
 colorsEL.forEach(color => {
   color.addEventListener('click', event => {
@@ -151,8 +149,6 @@ function isBrightColor(hexColor) {
   // Return true if the brightness is greater than or equal to 200, indicating a bright color
   return brightness >= 200;
 }
-
-
 
 // Call the function to update the colors on page load
 updateBackgroundColor();
