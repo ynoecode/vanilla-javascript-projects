@@ -100,6 +100,8 @@ colorsEL.forEach(color => {
   });
 });
 
+
+// Create toasts function
 function createToast(hexCode) {
   // Create the toast element
   const toastEl = document.createElement('div');
