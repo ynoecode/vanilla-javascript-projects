@@ -1,14 +1,11 @@
-/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-/* Global */
 body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* Texts */
 .title {
-  padding-top: 40px;
+  padding: 40px 0;
   text-align: center;
   font-size: 30px;
   text-transform: uppercase;
@@ -18,7 +15,6 @@ body {
   padding-top: 80px;
 }
 
-/* Buttons */
 .btn {
   background-color: #222831;
   color: #eee;
@@ -31,16 +27,12 @@ body {
   transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:active {
   background-color: #eee;
   color: #222831;
 }
 
-.btn:active {
-  transform: translateY(4px);
-}
-
-/* Container */
 .content-container {
   display: flex;
   flex-direction: column;
@@ -63,9 +55,6 @@ body {
   align-items: center;
   flex-grow: 1;
   height: 100%;
-}
-
-.color:hover {
   cursor: pointer;
   filter: brightness(80%);
 }
@@ -96,13 +85,13 @@ body {
   opacity: 1;
   font-weight: bold;
   background-color: var(--bg-color);
-  color: white; /* add this line to set the text color to white */
+  color: white;
 }
 
 .toast-container {
   position: fixed;
   bottom: 10px;
-  right: 10px; /* add this line to move the container to the bottom right */
+  right: 10px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
@@ -114,5 +103,3 @@ body {
 .toast-container .toast {
   margin-left: 10px;
 }
-
-
