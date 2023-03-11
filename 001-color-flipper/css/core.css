@@ -2,17 +2,14 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: black;
 }
 
 .title {
-  padding: 40px 0;
   text-align: center;
   font-size: 30px;
   text-transform: uppercase;
-}
-
-.bg-title {
-  padding-top: 80px;
 }
 
 .btn {
@@ -63,6 +60,14 @@ body {
   opacity: 1;
 }
 
+.color:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.color:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
 .hex {
   opacity: 0;
   transition: opacity 0.2s;
@@ -102,4 +107,61 @@ body {
 
 .toast-container .toast {
   margin-left: 10px;
+}
+
+/* Set up the dark mode class */
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Invert the colors for the button */
+.dark-mode .btn {
+  background-color: #eee;
+  color: #222;
+  border-color: #222;
+}
+
+/* Invert the colors for the toast messages */
+.dark-mode .toast {
+  background-color: #eee;
+  color: #222;
+}
+
+/* Style the dark mode button like the "Change Color" button */
+#dark-mode-button {
+  background-color: #222831;
+  color: #eee;
+  padding: 10px 20px;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+#dark-mode-button:hover,
+#dark-mode-button:active {
+  background-color: #eee;
+  color: #222831;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+
+footer a {
+  color: orange;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
 }

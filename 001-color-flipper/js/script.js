@@ -8,6 +8,8 @@ const buttonEl = document.querySelector('#btn');
 const colorsEL = document.querySelectorAll('.color');
 const toastEl = document.querySelector('.toast');
 const toastContainerEl = document.querySelector('.toast-container');
+const buttonDarkModeEl = document.querySelector('#dark-mode-button');
+const bodyEl = document.querySelector('body');
 
 // Add an event listener to the button that calls updateBackgroundColor when clicked
 buttonEl.addEventListener('click', updateBackgroundColor);
@@ -100,7 +102,6 @@ colorsEL.forEach(color => {
   });
 });
 
-
 // Create toasts function
 function createToast(hexCode) {
   // Create the toast element
@@ -151,6 +152,16 @@ function isBrightColor(hexColor) {
   // Return true if the brightness is greater than or equal to 200, indicating a bright color
   return brightness >= 200;
 }
+
+// Dark mode
+buttonDarkModeEl.addEventListener('click', () => {
+  bodyEl.classList.toggle('dark-mode');
+  if (bodyEl.classList.contains('dark-mode')) {
+    buttonDarkModeEl.textContent = 'Light Mode 🌞';
+  } else {
+    buttonDarkModeEl.textContent = 'Dark Mode 🌚';
+  }
+});
 
 // Call the function to update the colors on page load
 updateBackgroundColor();
