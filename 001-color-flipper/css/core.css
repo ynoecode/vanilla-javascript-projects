@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('<https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap>');
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -26,8 +26,14 @@ body {
 
 .btn:hover,
 .btn:active {
-  background-color: #eee;
+  background-color: orange;
   color: #222831;
+}
+
+#btn:active {
+  background-color: orange;
+  color: #222831;
+  border-color: orange;
 }
 
 .content-container {
@@ -43,6 +49,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   height: 50vh;
+  width: 100%; /* Fixed width */
 }
 
 .color {
@@ -54,18 +61,28 @@ body {
   height: 100%;
   cursor: pointer;
   filter: brightness(80%);
+  transition: filter 0.2s;
+  border-radius: 10px;
+  width: calc(100% / 6);
+  margin: 10px;
+  transition: transform .3s; /* Add transition */
+}
+
+.color:hover {
+  transform: scale(1.2); /* Increase size on hover */
+  z-index: 1;
+}
+
+.color:not(:hover) {
+  flex-shrink: 1; /* Shrink to fit */
 }
 
 .color:hover .hex {
   opacity: 1;
 }
 
-.color:first-child {
-  border-radius: 10px 0 0 10px;
-}
-
-.color:last-child {
-  border-radius: 0 10px 10px 0;
+.color:active {
+  filter: brightness(100%);
 }
 
 .hex {
@@ -101,7 +118,7 @@ body {
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: center;
-  z-index: 0;
+  z-index: 1;
   max-width: 400px;
 }
 
@@ -122,10 +139,23 @@ body {
   border-color: #222;
 }
 
+.dark-mode #btn:active {
+  background-color: orange;
+  color: #222831;
+  border-color: orange;
+}
+
+.dark-mode #btn:hover {
+  background-color: orange;
+}
+
 /* Invert the colors for the toast messages */
 .dark-mode .toast {
-  background-color: #eee;
   color: #222;
+}
+
+.dark-mode .toast.show {
+  color: white;
 }
 
 /* Style the dark mode button like the "Change Color" button */
@@ -156,7 +186,7 @@ footer {
   background-color: #222;
   color: #fff;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 footer a {

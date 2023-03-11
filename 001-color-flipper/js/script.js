@@ -11,6 +11,7 @@ const toastContainerEl = document.querySelector('.toast-container');
 const buttonDarkModeEl = document.querySelector('#dark-mode-button');
 const bodyEl = document.querySelector('body');
 
+
 // Add an event listener to the button that calls updateBackgroundColor when clicked
 buttonEl.addEventListener('click', updateBackgroundColor);
 
@@ -157,9 +158,9 @@ function isBrightColor(hexColor) {
 buttonDarkModeEl.addEventListener('click', () => {
   bodyEl.classList.toggle('dark-mode');
   if (bodyEl.classList.contains('dark-mode')) {
-    buttonDarkModeEl.textContent = 'Light Mode 🌞';
+    buttonDarkModeEl.textContent = 'Light 🌞';
   } else {
-    buttonDarkModeEl.textContent = 'Dark Mode 🌚';
+    buttonDarkModeEl.textContent = 'Dark 🌚';
   }
 });
 
