@@ -24,7 +24,3 @@ Thanks to the creators of the tutorials and resources that were used to create t
 ### Credits
 
 This code snippet was created with the help of tutorials from **[freeCodeCamp](https://www.freecodecamp.org/)** and **[Traversy Media](https://www.traversymedia.com/)**.
-
-### License
-
-This code is licensed under the MIT License.
