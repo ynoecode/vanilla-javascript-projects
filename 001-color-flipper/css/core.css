@@ -1,17 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* Set up the Roboto font */
+@import url('<https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap>');
 
+/* Set up the default styles for the body */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: white;
   color: black;
 }
 
+/* Set up the title styles */
 .title {
   text-align: center;
   font-size: 30px;
   text-transform: uppercase;
 }
 
+/* Set up the styles for the "Change Color" button */
 .btn {
   background-color: #222831;
   color: #eee;
@@ -26,10 +30,17 @@ body {
 
 .btn:hover,
 .btn:active {
-  background-color: #eee;
+  background-color: orange;
   color: #222831;
 }
 
+#btn:active {
+  background-color: orange;
+  color: #222831;
+  border-color: orange;
+}
+
+/* Set up the styles for the content container */
 .content-container {
   display: flex;
   flex-direction: column;
@@ -38,13 +49,16 @@ body {
   width: 100%;
 }
 
+/* Set up the styles for the color palette */
 .palette {
   padding-top: 40px;
   display: flex;
   flex-wrap: nowrap;
   height: 50vh;
+  width: 100%; /* Fixed width */
 }
 
+/* Set up the styles for each color element */
 .color {
   display: flex;
   flex-direction: column;
@@ -54,20 +68,36 @@ body {
   height: 100%;
   cursor: pointer;
   filter: brightness(80%);
+  transition: filter 0.2s;
+  border-radius: 10px;
+  width: calc(100% / 6);
+  margin: 10px;
+  transition: transform .3s; /* Add transition */
 }
 
+/* Increase the size of the color element on hover */
+.color:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+/* Shrink the color element to fit when not hovered */
+.color:not(:hover) {
+  flex-shrink: 1;
+}
+
+/* Show the hex code on hover */
 .color:hover .hex {
   opacity: 1;
 }
 
-.color:first-child {
-  border-radius: 10px 0 0 10px;
+/* Add a
+highlight to the color element when it's clicked */
+.color:active {
+  filter: brightness(100%);
 }
 
-.color:last-child {
-  border-radius: 0 10px 10px 0;
-}
-
+/* Set up the styles for the hex code */
 .hex {
   opacity: 0;
   transition: opacity 0.2s;
@@ -75,6 +105,7 @@ body {
   text-transform: uppercase;
 }
 
+/* Set up the styles for the toast messages */
 .toast {
   background-color: #222831;
   color: #eee;
@@ -86,6 +117,7 @@ body {
   margin-bottom: 5px;
 }
 
+/* Show the toast message with a background color that matches the color element */
 .toast.show {
   opacity: 1;
   font-weight: bold;
@@ -93,6 +125,7 @@ body {
   color: white;
 }
 
+/* Set up the styles for the toast container */
 .toast-container {
   position: fixed;
   bottom: 10px;
@@ -101,34 +134,46 @@ body {
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: center;
-  z-index: 0;
+  z-index: 1;
   max-width: 400px;
 }
 
-.toast-container .toast {
-  margin-left: 10px;
-}
-
-/* Set up the dark mode class */
+/* Set up the styles for the dark mode class */
 .dark-mode {
   background-color: #222;
   color: #fff;
 }
 
-/* Invert the colors for the button */
+/* Invert the colors for the "Change Color" button in dark mode */
 .dark-mode .btn {
   background-color: #eee;
   color: #222;
   border-color: #222;
 }
 
-/* Invert the colors for the toast messages */
+/* Invert the colors for the "Change Color" button when it's clicked in dark mode */
+.dark-mode #btn:active {
+  background-color: orange;
+  color: #222831;
+  border-color: orange;
+}
+
+/* Set the background color of the "Change Color" button to orange when it's hovered in dark mode */
+.dark-mode #btn:hover {
+  background-color: orange;
+}
+
+/* Invert the colors for the toast messages in dark mode */
 .dark-mode .toast {
-  background-color: #eee;
   color: #222;
 }
 
-/* Style the dark mode button like the "Change Color" button */
+/* Invert the colors for the toast messages when they're shown in dark mode */
+.dark-mode .toast.show {
+  color: white;
+}
+
+/* Set up the styles for the dark mode button */
 #dark-mode-button {
   background-color: #222831;
   color: #eee;
@@ -141,12 +186,14 @@ body {
   transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 
+/* Set the background color of the dark mode button to white when it's hovered or clicked */
 #dark-mode-button:hover,
 #dark-mode-button:active {
   background-color: #eee;
   color: #222831;
 }
 
+/* Set up the styles for the footer */
 footer {
   position: fixed;
   bottom: 0;
@@ -156,9 +203,10 @@ footer {
   background-color: #222;
   color: #fff;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
 }
 
+/* Set up the styles for the link in the footer */
 footer a {
   color: orange;
   text-decoration: none;
