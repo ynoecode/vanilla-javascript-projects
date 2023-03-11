@@ -1,6 +1,6 @@
-# Code Snippet Helper
+# Color Flipper
 
-This code snippet is a JavaScript and CSS implementation of a color flipper web application. The application allows users to generate random colors and copy the corresponding hex codes to the clipboard. The CSS file provides the styling for the web application.
+This is a JavaScript and CSS implementation of a color flipper web application. The application allows users to generate random colors and copy the corresponding hex codes to the clipboard. The CSS file provides the styling for the web application.
 
 ### Usage
 
@@ -17,21 +17,9 @@ The CSS file provides the styling for the web application, including the colors 
 To use this code snippet, simply download the code and open the `index.html` file in a web browser.
 To modify the code, you can edit the `script.js` and `style.css` files in your preferred code editor.
 
-### Support
-
-If you encounter any issues or have any questions about this code snippet, feel free to reach out to the developer or the community for support.
-
-### Contributing
-
-Contributions to this code snippet are welcome! If you have any suggestions or improvements, feel free to submit a pull request.
-
 ### Acknowledgements
 
 Thanks to the creators of the tutorials and resources that were used to create this code snippet.
-
-### About the Developer
-
-This code snippet was created by **[Ynoecode](https://www.instagram.com/ynoecode/)** — **Francis Ignacio**, a rekindle software developer.
 
 ### Credits
 
