@@ -65,7 +65,7 @@ modeButton.addEventListener('click', function() {
   // Toggle the light mode class on the body element
   body.classList.toggle(lightModeClass);
   // Change the text of the mode button depending on the mode
-  modeButton.textContent = body.classList.contains(lightModeClass) ? 'Light 🌞' : 'Dark 🌚';
+  modeButton.textContent = body.classList.contains(lightModeClass) ? 'Dark 🌚' :'Light 🌞';
   // Update the count text color and value
   updateValueColor();
 });
