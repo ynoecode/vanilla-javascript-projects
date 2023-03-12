@@ -5,6 +5,7 @@ This is a collection of mini-projects related to JavaScript. All of the projects
 ### Projects
 
 - **Project 1**: **[Color Flipper](https://github.com/ynoecode/vanilla-javascript-projects/tree/main/001-color-flipper)** - an app that generates random colors and copies their hex codes to the clipboard.
+- **Project 2**: **[Counter](https://github.com/ynoecode/vanilla-javascript-projects/tree/main/002-counter)** - it allows users to increase, decrease, and reset a count value. The app also includes a light mode feature that can be toggled on or off.
 
 ### About the Developer
 
