@@ -1,0 +1,121 @@
+/* Set up the Roboto font */
+@import url('<https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap>');
+
+/* Set up the default styles for the body */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+.counter__number {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter__number--current {
+  padding-bottom: 20px;
+  font-size: 5em;
+  text-align: center;
+}
+
+.counter__buttons--btn {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  padding:6px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.counter__buttons--btn#btn-decrease:hover {
+  background-color: red;
+  border: 2px solid red;
+}
+
+.counter__buttons--btn#btn-increase:hover {
+  background-color: green;
+  border: 2px solid green;
+}
+
+.counter__buttons--btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.counter__buttons--btn#mode-button {
+  background-color: black;
+  border: 2px solid black;
+  color: white;
+  padding:6px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.counter__buttons--btn#mode-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.light-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+.light-mode .counter__number--current {
+  color: black;
+}
+
+.light-mode .counter__buttons--btn {
+  background-color: black;
+  border: 2px solid white;
+  border-color: white; /* added */
+  color: white;
+}
+
+.light-mode .counter__buttons--btn#mode-button {
+  background-color: white;
+  border: 2px solid white;
+  color: black;
+}
+
+.light-mode .counter__buttons--btn#mode-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.light-mode .counter__buttons--btn#btn-reset:hover {
+  background-color: white;
+  color: black;
+}
