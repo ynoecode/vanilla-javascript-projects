@@ -1,5 +1,5 @@
-/* Set up the Roboto font */
-@import url('<https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap>');
+/* Import the Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* Set up the default styles for the body */
 body {
@@ -8,6 +8,7 @@ body {
   color: black;
 }
 
+/* Set up the styles for the container */
 .container {
   display: flex;
   flex-direction: column;
@@ -16,11 +17,13 @@ body {
   height: 50vh;
 }
 
+/* Set up the styles for the heading */
 h1 {
   font-size: 60px;
   text-align: center;
 }
 
+/* Set up the styles for the number display */
 .counter__number {
   font-size: 20px;
   display: flex;
@@ -28,17 +31,19 @@ h1 {
   align-items: center;
 }
 
+/* Set up the styles for the current number */
 .counter__number--current {
   padding-bottom: 20px;
   font-size: 5em;
   text-align: center;
 }
 
+/* Set up the styles for the buttons */
 .counter__buttons--btn {
   background-color: white;
   border: 2px solid black;
   color: black;
-  padding:6px 30px;
+  padding: 6px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -51,70 +56,69 @@ h1 {
   transition: all 0.2s ease-in-out;
 }
 
+/* Set up the styles for the decrease button on hover */
 .counter__buttons--btn#btn-decrease:hover {
   background-color: red;
   border: 2px solid red;
 }
 
+/* Set up the styles for the increase button on hover */
 .counter__buttons--btn#btn-increase:hover {
   background-color: green;
   border: 2px solid green;
 }
 
+/* Set up the styles for the buttons on hover */
 .counter__buttons--btn:hover {
   background-color: black;
   color: white;
 }
 
+/* Set up the styles for the mode button */
 .counter__buttons--btn#mode-button {
   background-color: black;
   border: 2px solid black;
   color: white;
-  padding:6px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: all 0.2s ease-in-out;
 }
 
+/* Set up the styles for the mode button on hover */
 .counter__buttons--btn#mode-button:hover {
   background-color: white;
   color: black;
 }
 
+/* Set up the styles for the light mode */
 .light-mode {
   background-color: #000;
   color: #fff;
 }
 
+/* Set up the styles for the current number in light mode */
 .light-mode .counter__number--current {
   color: black;
 }
 
+/* Set up the styles for the buttons in light mode */
 .light-mode .counter__buttons--btn {
   background-color: black;
   border: 2px solid white;
-  border-color: white; /* added */
   color: white;
 }
 
+/* Set up the styles for the mode button in light mode */
 .light-mode .counter__buttons--btn#mode-button {
   background-color: white;
   border: 2px solid white;
   color: black;
 }
 
+/* Set up the styles for the mode button on hover in light mode */
 .light-mode .counter__buttons--btn#mode-button:hover {
   background-color: black;
   color: white;
 }
 
+/* Set up the styles for the reset button on hover in light mode */
 .light-mode .counter__buttons--btn#btn-reset:hover {
   background-color: white;
   color: black;

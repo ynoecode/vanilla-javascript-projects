@@ -1,60 +1,71 @@
-// Set initial value
+// Initialize count variable to zero
 let count = 0;
 
-// Select value and buttons
+// Select the HTML element that displays the current count
 const value = document.querySelector('.counter__number--current');
-const btnDecrease = document.querySelector('#btn-decrease');
-const btnReset = document.querySelector('#btn-reset');
-const btnIncrease = document.querySelector('#btn-increase');
+
+// Select all buttons that can modify the count
+const buttons = document.querySelectorAll('.counter__buttons--btn');
+
+// Select the mode button and the body element
 const modeButton = document.querySelector('#mode-button');
-const body = document.querySelector('body');
+const body = document.body;
 
-btnDecrease.addEventListener('click', function() {
-    count--;
-    updateValueColor();
-});
+// Define the class name used for the light mode
+const lightModeClass = 'light-mode';
 
-btnReset.addEventListener('click', function() {
-  count = 0;
-  if (body.classList.contains('light-mode')) {
-      value.style.color = 'white';
-  } else {
-      value.style.color = 'black';
-  }
-  value.textContent = count;
-});
-
-btnIncrease.addEventListener('click', function() {
-    count++;
-    updateValueColor();
-});
-
-function updateValueColor() {
-    if (count > 0) {
-        value.style.color = 'green';
-    } else if (count < 0) {
-        value.style.color = 'red';
-    } else {
-        if (body.classList.contains('light-mode')) {
-          value.style.color = 'white';
-      } else {
-          value.style.color = 'black';
-      }
+// Loop through each button and add an event listener
+buttons.forEach(button => {
+  button.addEventListener('click', function() {
+    // Modify the count depending on which button was clicked
+    switch (button.id) {
+      case 'btn-decrease':
+        count--;
+        break;
+      case 'btn-increase':
+        count++;
+        break;
+      case 'btn-reset':
+        count = 0;
+        // If in light mode, set the text color to white, else set it to black
+        value.style.color = body.classList.contains(lightModeClass) ? '#fff' : '#000';
+        break;
+      default:
+        break;
     }
-    value.textContent = count;
+    // Update the count text color and value
+    updateValueColor();
+  });
+});
+
+// Function to update the count text color and value
+function updateValueColor() {
+  switch (Math.sign(count)) {
+    // If count is negative, set the text color to red
+    case -1:
+      value.style.color = 'red';
+      break;
+    // If count is zero, set the text color to white or black depending on the mode
+    case 0:
+      value.style.color = body.classList.contains(lightModeClass) ? '#fff' : '#000';
+      break;
+    // If count is positive, set the text color to green
+    case 1:
+      value.style.color = 'green';
+      break;
+    default:
+      break;
+  }
+  // Update the count value
+  value.textContent = count;
 }
 
+// Add an event listener to the mode button
 modeButton.addEventListener('click', function() {
-  if (body.classList.contains('light-mode')) {
-    body.classList.remove('light-mode');
-    modeButton.textContent = 'Light 🌞';
-  } else {
-    body.classList.add('light-mode');
-    modeButton.textContent = 'Dark 🌚';
-  }
-  if (body.classList.contains('light-mode')) {
-    value.style.color = '#ffffff';
-  } else {
-    updateValueColor();
-  }
+  // Toggle the light mode class on the body element
+  body.classList.toggle(lightModeClass);
+  // Change the text of the mode button depending on the mode
+  modeButton.textContent = body.classList.contains(lightModeClass) ? 'Light 🌞' : 'Dark 🌚';
+  // Update the count text color and value
+  updateValueColor();
 });
