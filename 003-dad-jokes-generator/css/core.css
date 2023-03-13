@@ -1,0 +1,79 @@
+/* Import the Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Set up the default styles for the body */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: black;
+}
+
+/* Dad jokes generator */
+.dad-jokes-generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+/* Dad jokes generator - title */
+.dad-jokes-generator h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Dad jokes generator - joke */
+.dad-jokes-generator p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/* Dad jokes generator - button */
+.dad-jokes-generator button {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f5f5f5;
+  color: black;
+  cursor: pointer;
+}
+
+/* Dad jokes generator - button:hover */
+.dad-jokes-generator button:hover {
+  background-color: #e5e5e5;
+}
+
+/* Dad jokes generator - button:active */
+.dad-jokes-generator button:active {
+  background-color: #d5d5d5;
+}
+
+/* Dad jokes generator - button:focus */
+.dad-jokes-generator button:focus {
+  outline: none;
+}
+
+/* Dad jokes generator - button:disabled */
+.dad-jokes-generator button:disabled {
+  background-color: #f5f5f5;
+  color: #d5d5d5;
+  cursor: not-allowed;
+}
+
+/* Dad jokes generator - button:disabled:hover */
+.dad-jokes-generator button:disabled:hover {
+  background-color: #f5f5f5;
+  color: #d5d5d5;
+}
+
+/* Dad jokes generator - button:disabled:active */
+.dad-jokes-generator button:disabled:active {
+  background-color: #f5f5f5;
+  color: #d5d5d5;
+}
+
